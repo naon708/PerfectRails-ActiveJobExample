@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Active Job
 
-Things you may want to cover:
+```shell
+% bin/rails g job async_log
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+invoke  test_unit
+create    test/jobs/async_log_job_test.rb
+create  app/jobs/async_log_job.rb
+```
