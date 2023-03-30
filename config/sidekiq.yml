@@ -1,0 +1,4 @@
+# Sidekiqプロセスがasync_logキューを管理するためにはこちらにも設定が必要
+:queues:
+  - default
+  - async_log

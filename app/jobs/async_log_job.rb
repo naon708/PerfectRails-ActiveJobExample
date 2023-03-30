@@ -1,5 +1,6 @@
 class AsyncLogJob < ApplicationJob
-  queue_as :default
+  # 「このジョブクラスはasync_logというキューを使ってください」という指定
+  queue_as :async_log
 
   def perform(message: "hello")
     AsyncLog.create!(message: message)
