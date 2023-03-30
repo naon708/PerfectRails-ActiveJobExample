@@ -19,9 +19,9 @@ class AsyncLogJob < ApplicationJob
 
   # ジョブの破棄
   discard_on StandardError
-  discard_on SomeError do |job, error|
-    SomeNotifier.push(error)
-  end
+  # discard_on SomeError do |job, error|
+  #   SomeNotifier.push(error)
+  # end
 
   # 非同期処理時に呼ばれるメソッド
   def perform(message: "hello")
