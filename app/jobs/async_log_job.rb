@@ -14,8 +14,16 @@ class AsyncLogJob < ApplicationJob
     end
   end
 
+  # ジョブのリトライ
   retry_on StandardError, wait: 5.seconds, attempts: 3
 
+  # ジョブの破棄
+  discard_on StandardError
+  discard_on SomeError do |job, error|
+    SomeNotifier.push(error)
+  end
+
+  # 非同期処理時に呼ばれるメソッド
   def perform(message: "hello")
     AsyncLog.create!(message: message)
   end
