@@ -2,3 +2,4 @@
 :queues:
   - default
   - async_log
+  - another_queue
